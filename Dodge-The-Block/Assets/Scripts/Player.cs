@@ -10,10 +10,12 @@ public class Player : MonoBehaviour
     private float mapWidth = 5f;
 
     private Rigidbody2D rigidbody;
+    private GameManager gameManager;
 
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
+        gameManager = FindObjectOfType<GameManager>();
     }
     private void FixedUpdate()
     {
@@ -24,5 +26,10 @@ public class Player : MonoBehaviour
         newPosition.x = Mathf.Clamp(newPosition.x, -mapWidth, mapWidth);
 
         rigidbody.MovePosition(newPosition);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        gameManager.EndGame();
     }
 }
