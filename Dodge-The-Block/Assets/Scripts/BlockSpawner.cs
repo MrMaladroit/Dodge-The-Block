@@ -8,8 +8,21 @@ public class BlockSpawner : MonoBehaviour
     private Transform[] spawnPoints;
     [SerializeField]
     private GameObject blockPrefab;
+    [SerializeField]
+    private float timeBetweenWaves = 1f;
 
-    private void Start()
+    private float timeToSpawn = 2f;
+
+    private void Update()
+    {
+        if(Time.time >= timeToSpawn)
+        {
+            SpawnBlocks();
+            timeToSpawn = Time.time + timeBetweenWaves;
+        }
+    }
+
+    private void SpawnBlocks()
     {
         int randomIndex = Random.Range(0, spawnPoints.Length);
 
@@ -21,6 +34,5 @@ public class BlockSpawner : MonoBehaviour
                 continue;
         }
     }
-
 
 }
