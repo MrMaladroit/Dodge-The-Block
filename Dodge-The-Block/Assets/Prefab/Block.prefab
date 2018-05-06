@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 393d17c0f3e002d468e1edd0b490663a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialPoolSize: 25
 --- !u!212 &212967364326286332
 SpriteRenderer:
   m_ObjectHideFlags: 1

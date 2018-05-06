@@ -268,7 +268,7 @@ MonoBehaviour:
   - {fileID: 1293635776}
   - {fileID: 1031226296}
   - {fileID: 1911566218}
-  blockPrefab: {fileID: 1495375119558942, guid: f451a0542ac9d2d4c9aff5c53a197baf,
+  blockPrefab: {fileID: 114586910464562792, guid: f451a0542ac9d2d4c9aff5c53a197baf,
     type: 2}
   timeBetweenWaves: 1
 --- !u!4 &284659533

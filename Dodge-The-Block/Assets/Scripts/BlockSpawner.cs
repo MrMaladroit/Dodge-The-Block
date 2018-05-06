@@ -7,7 +7,7 @@ public class BlockSpawner : MonoBehaviour
     [SerializeField]
     private Transform[] spawnPoints;
     [SerializeField]
-    private GameObject blockPrefab;
+    private Block blockPrefab;
     [SerializeField]
     private float timeBetweenWaves = 1f;
 
@@ -29,10 +29,9 @@ public class BlockSpawner : MonoBehaviour
         for (int i = 0; i < spawnPoints.Length; i++)
         {
             if (randomIndex != i)
-                Instantiate(blockPrefab, spawnPoints[i].position, Quaternion.identity);
+               blockPrefab.Get<Block>(spawnPoints[i].position, Quaternion.identity);
             else
                 continue;
         }
     }
-
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Block : MonoBehaviour
+public class Block : PooledMonoBehaviour
 {
     private float blockGravityIncreaseRate = 20f;
 
@@ -15,7 +15,7 @@ public class Block : MonoBehaviour
     {
         if(transform.position.y < -2f)
         {
-            Destroy(this.gameObject);
+            ReturnToPool();
         }
     }
 }

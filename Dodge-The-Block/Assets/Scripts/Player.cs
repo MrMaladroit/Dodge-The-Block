@@ -8,14 +8,20 @@ public class Player : MonoBehaviour
     private float moveSpeed = 15f;
     [SerializeField]
     private float mapWidth = 5f;
-
+    
     private Rigidbody2D rigidbody;
     private GameManager gameManager;
+    private Vector2 initialPosition;
 
     private void Awake()
-    {
+    { 
         rigidbody = GetComponent<Rigidbody2D>();
         gameManager = FindObjectOfType<GameManager>();
+    }
+
+    private void Start()
+    {
+        initialPosition = rigidbody.position;
     }
     private void FixedUpdate()
     {

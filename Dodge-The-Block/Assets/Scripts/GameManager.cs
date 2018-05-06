@@ -6,12 +6,13 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField]
     private float slowDownRate = 10f;
+
     public void EndGame()
     {
-        StartCoroutine(RestartLevel());
+        StartCoroutine(ResetLevel());
     }
 
-    private IEnumerator RestartLevel()
+    private IEnumerator ResetLevel()
     {
         Time.timeScale = 1f / slowDownRate;
         Time.fixedDeltaTime =  Time.fixedDeltaTime / slowDownRate;
@@ -21,6 +22,14 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         Time.fixedDeltaTime = Time.fixedDeltaTime * slowDownRate;
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
+
+/* TODO
+ * 
+ * Refactor ResetLevel to do the following:
+ * Reset Player position
+ * Return all blocks to pool
+ * Reset all variables to default values
+ * 
+ */
